@@ -1,0 +1,31 @@
+<main class="main">
+  <div class="content">
+    <div class="left-side">
+      <h1>Catálogo</h1>
+      <p>Selecciona los productos que deseas comprar</p><!--sugerido por copilot-->
+      <ul class="product-list">
+        <!-- genera un listado de elementos para products -->
+        <li *ngFor="let product of products" class="product-item">
+          <div class="product">
+            <div class="product-image">
+              <img [src]="product.imageUrl" [alt]="product.name" />
+            </div>
+            <div class="product-info">
+              <h2>{{ product.name }}</h2>
+              <p>{{ product.description }}</p>
+              <p class="product-price">{{ product.price | currency }}</p>
+            </div>
+            <div class="product-action">
+              <button class="btn btn-primary" (click)="addToCart(product, 1)">
+                Agregar al carrito
+              </button>
+            </div>
+          </div>
+      </ul>
+   </div>
+    <div class="divider" role="separator" aria-label="Divider"></div>
+    <div class="right-side">
+      <h1>Carrito</h1>
+    </div>
+  </div>
+</main>
