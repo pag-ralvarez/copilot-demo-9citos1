@@ -36,6 +36,12 @@ export class CartService {
     });
     return total;
   }
+
+  //function to clear cart
+  clearCart() {
+    this.items = [];
+    return this.items;
+  }
 }
 
 // interface for cart item

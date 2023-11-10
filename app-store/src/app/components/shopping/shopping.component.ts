@@ -44,7 +44,7 @@ export class ShoppingComponent {
     // update total price of items in cart
     this.updateTotal();
     // display a message
-    this.messageService.add(`${item.name} added to cart`);
+    this.messageService.add(`${item.name} agregado al carrito`);
   }
 
   // function to remove item from cart
@@ -56,11 +56,21 @@ export class ShoppingComponent {
     // update total price of items in cart
     this.updateTotal();
     // display a message
-    this.messageService.add(`${item.name} removed from cart`);
+    this.messageService.add(`${item.name} removido del carrito`);
   }
 
   // function to update total price of items in cart
   updateTotal() {
     this.total = this.cartService.getTotal();
+  }
+
+  // function to buy items in cart
+  buy() {
+    // clear cart
+    this.cart = this.cartService.clearCart();
+    // update total price of items in cart
+    this.updateTotal();
+    // display a message
+    this.messageService.add(`¡Compra realizada!`);
   }
 }

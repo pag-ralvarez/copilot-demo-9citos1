@@ -12,7 +12,7 @@ export class ProductService {
         name: 'Product 1',
         description: 'This is product 1',
         price: 100,
-        imageUrl: 'https://picsum.photos/200'
+        imageUrl: 'https://picsum.photos/100'
       },
       {
         id: 2,
@@ -26,21 +26,21 @@ export class ProductService {
         name: 'Product 3',
         description: 'This is product 3',
         price: 300,
-        imageUrl: 'https://picsum.photos/200'
+        imageUrl: 'https://picsum.photos/300'
       },
       {
         id: 4,
         name: 'Product 4',
         description: 'This is product 4',
         price: 400,
-        imageUrl: 'https://picsum.photos/200'
+        imageUrl: 'https://picsum.photos/400'
       },
       {
         id: 5,
         name: 'Product 5',
         description: 'This is product 5',
         price: 500,
-        imageUrl: 'https://picsum.photos/200'
+        imageUrl: 'https://picsum.photos/500'
       }
     ];
   }
