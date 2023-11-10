@@ -20,6 +20,10 @@ export class ShoppingComponent {
     ) { }
 
   products:Product[] = [];
+  // variable to hold items in cart and keep it in sync with cart service
+  cart:CartItem[] = this.cartService.getItems();
+  // variable to hold total price of items in cart and keep it in sync with cart service
+  total:number = this.cartService.getTotal();
 
   ngOnInit() {
     // get products from product service
@@ -37,7 +41,26 @@ export class ShoppingComponent {
     };
     // add item to cart
     this.cartService.addToCart(item);
+    // update total price of items in cart
+    this.updateTotal();
     // display a message
     this.messageService.add(`${item.name} added to cart`);
+  }
+
+  // function to remove item from cart
+  removeFromCart(item: CartItem) {
+    // get index of item in cart
+    let index = this.cart.indexOf(item);
+    // remove item from cart
+    this.cart.splice(index, 1);
+    // update total price of items in cart
+    this.updateTotal();
+    // display a message
+    this.messageService.add(`${item.name} removed from cart`);
+  }
+
+  // function to update total price of items in cart
+  updateTotal() {
+    this.total = this.cartService.getTotal();
   }
 }

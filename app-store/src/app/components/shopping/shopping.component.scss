@@ -67,7 +67,7 @@ main {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  max-width: 700px;
+  max-width: 1024px;
   margin-bottom: 3rem;
 }
 
@@ -79,6 +79,14 @@ main {
   width: 1px;
   background: var(--red-to-pink-to-purple-vertical-gradient);
   margin-inline: 0.5rem;
+}
+.cart {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  min-width: 390px;
 }
 
 /* haz que product-item no tenga bullets */
@@ -98,6 +106,24 @@ main {
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
+/* item-list sin bullets */
+.item-list {
+  list-style: none;
+  padding-inline-start: 0;
+}
+/* item es un grid de 2 columnas */
+.item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+/* item-info es un grid de 3 columnas */
+.item-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
 
 @media screen and (max-width: 650px) {
   .content {

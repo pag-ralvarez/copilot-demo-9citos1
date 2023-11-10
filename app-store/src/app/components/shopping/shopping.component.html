@@ -22,10 +22,30 @@
             </div>
           </div>
       </ul>
-   </div>
+    </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
-      <h1>Carrito</h1>
+      <div class="cart">
+        <h1>Carrito</h1>
+        <!-- muestra el precio total del carrito -->
+        <p class="cart-total">Total: {{ total | currency }}</p>
+
+        <ul class="item-list">
+          <!-- genera un listado de elementos para cart -->
+          <li *ngFor="let item of cart" class="item">
+            <div class="item-info">
+              <!-- badge para mostrar la cantidad de items en el carrito -->
+              <span>x{{ item.quantity }} - {{ item.name }}</span>
+              <span class="item-price">{{ item.price | currency }}</span>
+            </div>
+            <div class="item-action">
+              <!-- genera un botón para remover un item del carrito como icono de basura -->
+              <button class="btn btn-icon" (click)="removeFromCart(item)">
+                <i class="material-icons">delete</i>
+              </button>
+            </div>
+        </ul>
+      </div>
     </div>
   </div>
 </main>
